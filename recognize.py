@@ -24,13 +24,15 @@ config = {
 }
 
 audio = {
-    "uri": "gs://cloud-samples-tests/speech/brooklyn.flac"
+    "uri": "gs://cloud-samples-tests/speech/brooklyn.flac" # TODO: capture audio from user, upload to google cloud storage, then use that URL here
 }
 
 response = client.recognize(config, audio)
 
 print(f"\nRESPONSE: {type(response)})\n") #> <class 'google.cloud.speech_v1.types.RecognizeResponse'>)
 print(f"\nRESULTS: {type(response.results)})\n") #> <class 'google.protobuf.pyext._message.RepeatedCompositeContainer'>)
+
+word = "Brooklyn" # TODO: get this from the experiment administrator
 
 for result in response.results:
     print(f"\nRESULT: {type(result)})\n") #> <class 'google.cloud.speech_v1.types.SpeechRecognitionResult'>)
@@ -39,3 +41,7 @@ for result in response.results:
     for a in result.alternatives:
         print(a)
         #print(f"\n  TRANSCRIPT: '{a.transcript.title()}' | CONFIDENCE: {a.confidence}\n") #> TRANSCRIPT: 'How Old Is The Brooklyn Bridge' | CONFIDENCE: 0.9833518266677856
+        if word in a.transcript:
+            print(f"\nDETECTED '{word.upper()}' WITH {a.confidence} CONFIDENCE\n")
+        else:
+            print(f"\nOH, DIDN'T DETECT '{word.upper()}'\n")

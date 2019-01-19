@@ -26,6 +26,8 @@ curl -s -H "Content-Type: application/json" \
   + https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-usage-python
   + https://github.com/googleapis/google-cloud-python
   + https://googleapis.github.io/google-cloud-python/latest/speech/index.html
+  + https://pypi.org/project/google-cloud-speech/
+  + https://github.com/googleapis/google-cloud-python/tree/master/speech
 
 
 ## Google Cloud SDK
