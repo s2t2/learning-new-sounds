@@ -34,6 +34,7 @@ Install package dependencies:
 ```sh
 pip install --upgrade google-cloud-speech
 pip install python-dotenv
+pip install sounddevice --user
 ```
 
 ## Authorization

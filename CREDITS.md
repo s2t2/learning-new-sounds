@@ -14,7 +14,7 @@ curl -s -H "Content-Type: application/json" \
     -d @sync-request.json
 ```
 
-## Audio Files
+## Storing Audio Files
 
   + https://stackoverflow.com/questions/38806490/what-does-gs-protocol-mean
   + https://storage.googleapis.com/cloud-samples-tests/speech/brooklyn.flac
@@ -29,7 +29,9 @@ curl -s -H "Content-Type: application/json" \
   + https://pypi.org/project/google-cloud-speech/
   + https://github.com/googleapis/google-cloud-python/tree/master/speech
 
+## Recording Audio Files
 
-## Google Cloud SDK
-
-  + https://cloud.google.com/sdk/ (is this necessary?)
+  + https://github.com/jleb/pyaudio
+  + https://github.com/spatialaudio/python-sounddevice/
+  + https://python-sounddevice.readthedocs.io/en/0.3.12/
+  + https://python-sounddevice.readthedocs.io/en/0.3.12/usage.html#recording
