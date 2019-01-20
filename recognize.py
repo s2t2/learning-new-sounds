@@ -1,47 +1,68 @@
-# adapted from: https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-usage-python
-
 from dotenv import load_dotenv
 import io
 import os
-import pdb  # pdb.set_trace()
+import pdb # pdb.set_trace()
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 
-load_dotenv() # recognize GOOGLE_APPLICATION_CREDENTIALS from .env file
+#
+# SETUP
+#
 
+load_dotenv() # recognize environment variables from .env file
+
+print("--------------------------")
 CREDENTIALS_FILEPATH = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+print(f"CREDENTIALS FILE: {os.path.isfile(CREDENTIALS_FILEPATH)}")
 
-print(f"\nCREDENTIALS FILE: {CREDENTIALS_FILEPATH}\n")
+print("--------------------------")
+lang = "en-US" # TODO: allow experiment admin to select from all available options
+print(f"LANGUAGE: {lang}")
+
+word = "Brooklyn" # TODO: get this from the experiment administrator
+print(f"WORD: {word}")
+
+GCS_BUCKET_DIR = os.environ.get("GCS_BUCKET_DIR", default="cloud-samples-tests/speech")
+audio_uri = f"gs://{GCS_BUCKET_DIR}/brooklyn.flac" # TODO: capture audio from user and upload to cloud storage
+print(f"AUDIO FILE: {audio_uri}")
+
+#
+# CLIENT
+#
 
 client = speech.SpeechClient()
+
+#
+# REQUEST
+#
+
+audio = {"uri": audio_uri}
 
 config = {
     "encoding": "FLAC",
     "sample_rate_hertz": 16000,
-    "language_code": "en-US",
-    "enable_word_time_offsets": False
-}
-
-audio = {
-    "uri": "gs://cloud-samples-tests/speech/brooklyn.flac" # TODO: capture audio from user, upload to google cloud storage, then use that URL here
+    "language_code": lang,
+    "enable_word_time_offsets": False # consider exploring differences between setting True vs. False
 }
 
 response = client.recognize(config, audio)
 
-print(f"\nRESPONSE: {type(response)})\n") #> <class 'google.cloud.speech_v1.types.RecognizeResponse'>)
-print(f"\nRESULTS: {type(response.results)})\n") #> <class 'google.protobuf.pyext._message.RepeatedCompositeContainer'>)
+#
+# PARSED RESPONSE
+#
 
-word = "Brooklyn" # TODO: get this from the experiment administrator
+# print(f"\nRESPONSE: {type(response)})") #> <class 'google.cloud.speech_v1.types.RecognizeResponse'>)
 
 for result in response.results:
-    print(f"\nRESULT: {type(result)})\n") #> <class 'google.cloud.speech_v1.types.SpeechRecognitionResult'>)
-    print(f"\nALTERNATIVES: {type(result.alternatives)})\n") #> <class 'google.protobuf.pyext._message.RepeatedCompositeContainer'>)
+    # print(f"RESULT: {type(result)})") #> <class 'google.cloud.speech_v1.types.SpeechRecognitionResult'>)
 
+    print("--------------------------")
     for a in result.alternatives:
-        print(a)
-        #print(f"\n  TRANSCRIPT: '{a.transcript.title()}' | CONFIDENCE: {a.confidence}\n") #> TRANSCRIPT: 'How Old Is The Brooklyn Bridge' | CONFIDENCE: 0.9833518266677856
+        print(f"TRANSCRIPT: '{a.transcript.upper()}'") #> TRANSCRIPT: 'How Old Is The Brooklyn Bridge' | CONFIDENCE: 0.9833518266677856
+        print(f"CONFIDENCE: {a.confidence}") #> TRANSCRIPT: 'How Old Is The Brooklyn Bridge' | CONFIDENCE: 0.9833518266677856
         if word in a.transcript:
-            print(f"\nDETECTED '{word.upper()}' WITH {a.confidence} CONFIDENCE\n")
+            print(f"DETECTED '{word.upper()}' WITH {a.confidence} CONFIDENCE")
         else:
-            print(f"\nOH, DIDN'T DETECT '{word.upper()}'\n")
+            print(f"OH, DIDN'T DETECT '{word.upper()}'")
+        print("--------------------------")
