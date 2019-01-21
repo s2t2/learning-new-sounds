@@ -8,11 +8,7 @@
 
 ## Installation
 
-Download or clone from GitHub source:
-
-```sh
-git clone https://github.com/s2t2/learning-new-sounds.git # or git@github.com:s2t2/learning-new-sounds.git
-```
+Download or clone from [GitHub source](https://github.com/s2t2/learning-new-sounds).
 
 ## Setup
 
@@ -32,13 +28,15 @@ conda activate sounds-env
 Install package dependencies:
 
 ```sh
-pip install --upgrade google-cloud-speech
+pip install --upgrade google-cloud-speech # only necessary for running script/recognize_remote.py
 pip install python-dotenv
 pip install pyaudio # on Mac OS, first run: `brew install portaudio` (see http://people.csail.mit.edu/hubert/pyaudio/#downloads)
 pip install SpeechRecognition # depends on pyaudio
 ```
 
 ## Authorization
+
+> only necessary for running script/recognize_remote.py ...
 
 Setup a new project in the [Google API Console](https://console.cloud.google.com/cloud-resource-manager), enable the "Cloud Speech API" for this project, and download the corresponding credentials .json file into the "credentials" directory of this repository. Note the full path to this credentials file.
 
@@ -56,6 +54,6 @@ Recognize speech (reads from "sounds/brooklyn.flac" by default, but possible to 
 
 ```sh
 python scripts/recognize_local.py
-
+# ... OR ...
 AUDIO_FILENAME="microphone-results.flac" python scripts/recognize_local.py
 ```
