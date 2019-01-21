@@ -9,7 +9,6 @@ Example Output:
 ```
 TRANSCRIPT: "how old is the Brooklyn Bridge"
 CONFIDENCE: 0.9833518266677856
-DETECTED 'BROOKLYN' WITH 0.9833518266677856 CONFIDENCE
 ```
 
 See the [Contributor's Guide](/CONTRIBUTING.md) for setup, installation, and usage instructions.
