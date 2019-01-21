@@ -14,6 +14,13 @@ with sr.AudioFile(AUDIO_FILE) as source:
     audio = client.record(source)
 
 try:
-    print("TRANSCRIPT: " + client.recognize_google(audio))
+    #transcript = client.recognize_google(audio) #> 'how old is the Brooklyn Bridge'
+    #print("TRANSCRIPT: " + transcript)
+
+    response = client.recognize_google(audio, show_all=True) #> {'alternative': [{'transcript': 'how old is the Brooklyn Bridge', 'confidence': 0.987629}], 'final': True}
+    alternative = response["alternative"][0]
+    print("TRANSCRIPT: " + alternative["transcript"])
+    print("CONFIDENCE: " + str(alternative["confidence"]))
+
 except Exception as e:
-    print("TRANSCRIPT ERROR", e)
+    print("TRANSCRIPT ERROR:", e)
