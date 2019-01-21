@@ -38,3 +38,5 @@ curl -s -H "Content-Type: application/json" \
 
   + https://github.com/Uberi/speech_recognition
   + http://people.csail.mit.edu/hubert/pyaudio/#downloads
+  + https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst
+  + https://github.com/Uberi/speech_recognition/blob/master/examples/write_audio.py
