@@ -46,10 +46,16 @@ Create a new `.env` file in the root directory of this repository, as a copy of 
 
 ## Usage
 
+Record audio and save to file:
+
+```sh
+python app/record.py
+```
+
 Recognize speech:
 
 ```sh
-python recognize.py
+python app/recognize.py
 ```
 
 > NOTE: right now this is using a hard-coded audio file and recognition word
