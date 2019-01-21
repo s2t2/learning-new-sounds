@@ -1,16 +1,23 @@
-# record and recognize
-# adapted from: https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py and https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
+#
+# uses the "speech_recognition" package (which uses Google Cloud Speech API via demo credentials)
+#
+# recognizes the "brooklyn bridge" local audio file
+#
 
-from os import path
+import os
 import pdb # pdb.set_trace()
 import random
 import speech_recognition as sr
 
-AUDIO_FILE = path.join(path.dirname(__file__), "..", "sounds", "brooklyn.flac") # path.join(SOUNDS_DIR, random.shuffle(["brooklyn.flac", "french.aiff" "chinese.flac"]))
+
+AUDIO_FILENAME = os.environ.get("AUDIO_FILENAME", "brooklyn.flac") # random.shuffle(["brooklyn.flac", "french.aiff" "chinese.flac"])
+AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sounds", AUDIO_FILENAME)
+
+#pdb.set_trace()
 
 client = sr.Recognizer()
 
-with sr.AudioFile(AUDIO_FILE) as source:
+with sr.AudioFile(AUDIO_FILEPATH) as source:
     audio = client.record(source)
 
 try:

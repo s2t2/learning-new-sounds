@@ -46,16 +46,16 @@ Create a new `.env` file in the root directory of this repository, as a copy of 
 
 ## Usage
 
-Record audio and save to file:
+Record audio and save to file "sounds/microphone-results.flac":
 
 ```sh
 python scripts/record.py
 ```
 
-Recognize speech:
+Recognize speech (reads from "sounds/brooklyn.flac" by default, but possible to customize via `AUDIO_FILENAME` environment variable referencing the name of a file in the "sounds" directory):
 
 ```sh
-python scripts/recognize.py
-```
+python scripts/recognize_local.py
 
-> NOTE: right now this is using a hard-coded audio file and recognition word
+AUDIO_FILENAME="microphone-results.flac" python scripts/recognize_local.py
+```
