@@ -34,6 +34,8 @@ Install package dependencies:
 ```sh
 pip install --upgrade google-cloud-speech
 pip install python-dotenv
+pip install pyaudio # on Mac OS, first run: brew install portaudio
+pip install SpeechRecognition
 ```
 
 ## Authorization
