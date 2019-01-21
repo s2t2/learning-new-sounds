@@ -2,10 +2,11 @@
 
 import speech_recognition as sr
 
-r = sr.Recognizer()
-with sr.Microphone() as source:
+client = sr.Recognizer() # are there config options here?
+
+with sr.Microphone() as mic:
     print("Say something!")
-    audio = r.listen(source)
+    audio = client.listen(mic) # are there config options here?
 
 with open("microphone-results.flac", "wb") as f:
     f.write(audio.get_flac_data())
