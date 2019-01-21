@@ -8,5 +8,5 @@ credentials/*
 # Ignore .env file which contains sensitive environment variables
 .env
 
-# Ignore audio files (for the moment)
+# Ignore audio file
 sounds/microphone-results.flac
