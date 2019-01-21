@@ -1,5 +1,6 @@
 # record and recognize
-# adapted from https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py
+# adapted from: https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py and https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
+
 from os import path
 import pdb # pdb.set_trace()
 import random
@@ -13,8 +14,6 @@ with sr.AudioFile(AUDIO_FILE) as source:
     audio = client.record(source)
 
 try:
-    print("Sphinx thinks you said " + client.recognize_sphinx(audio))
-except sr.UnknownValueError:
-    print("Sphinx could not understand audio")
-except sr.RequestError as e:
-    print("Sphinx error; {0}".format(e))
+    print("TRANSCRIPT: " + client.recognize_google(audio))
+except Exception as e:
+    print("TRANSCRIPT ERROR", e)

@@ -41,3 +41,4 @@ curl -s -H "Content-Type: application/json" \
   + https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst
   + https://github.com/Uberi/speech_recognition/blob/master/examples/write_audio.py
   + https://github.com/Uberi/speech_recognition/blob/master/examples
+  + https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
