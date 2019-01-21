@@ -1,7 +1,12 @@
 
+.DS_Store
+
 # Ignore the credentials.json file downloaded from https://cloud.google.com/speech-to-text/docs/quickstart-protocol
 credentials/*
 #*.json
 
 # Ignore .env file which contains sensitive environment variables
 .env
+
+# Ignore audio file
+sounds/microphone-results.flac

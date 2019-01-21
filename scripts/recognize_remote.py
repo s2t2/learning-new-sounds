@@ -1,3 +1,9 @@
+#
+# uses the "google.cloud.speech" package directly, via custom project credentials
+#
+# recognizes the "brooklyn bridge" remote audio file from google cloud storage
+#
+
 from dotenv import load_dotenv
 import io
 import os

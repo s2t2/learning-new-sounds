@@ -14,7 +14,7 @@ curl -s -H "Content-Type: application/json" \
     -d @sync-request.json
 ```
 
-## Audio Files
+## Storing Audio Files
 
   + https://stackoverflow.com/questions/38806490/what-does-gs-protocol-mean
   + https://storage.googleapis.com/cloud-samples-tests/speech/brooklyn.flac
@@ -33,3 +33,12 @@ curl -s -H "Content-Type: application/json" \
 ## Google Cloud SDK
 
   + https://cloud.google.com/sdk/ (is this necessary?)
+
+## Recording Audio
+
+  + https://github.com/Uberi/speech_recognition
+  + http://people.csail.mit.edu/hubert/pyaudio/#downloads
+  + https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst
+  + https://github.com/Uberi/speech_recognition/blob/master/examples/write_audio.py
+  + https://github.com/Uberi/speech_recognition/blob/master/examples
+  + https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
