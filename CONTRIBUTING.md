@@ -54,6 +54,8 @@ Recognize speech (reads from "sounds/brooklyn.flac" by default, but possible to 
 
 ```sh
 python scripts/recognize_local.py
-# ... OR ...
+
 AUDIO_FILENAME="microphone-results.flac" python scripts/recognize_local.py
+
+AUDIO_FILENAME="el-ninyo.flac" LANG="es" python scripts/recognize_local.py
 ```
