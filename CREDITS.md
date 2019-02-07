@@ -50,6 +50,7 @@ curl -s -H "Content-Type: application/json" \
   + https://documenter.getpostman.com/view/2675436/speechace-api-calls/6tW8nSr
   + https://www.speechace.com/#api
   + https://cmusphinx.github.io/wiki/phonemerecognition/
+  + https://github.com/Uberi/speech_recognition/blob/f89256b9413e4aa22dee0e5241bfcb7dcd3a9161/speech_recognition/__init__.py#L750
 
 ### IBM
 
@@ -58,3 +59,4 @@ curl -s -H "Content-Type: application/json" \
 ### Google
 
   + https://cloud.google.com/speech-to-text/docs/automatic-punctuation
+  + https://stackoverflow.com/questions/43163886/google-speech-api-python-exception-specify-flac-encoding-to-match-file-header
