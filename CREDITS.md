@@ -42,3 +42,19 @@ curl -s -H "Content-Type: application/json" \
   + https://github.com/Uberi/speech_recognition/blob/master/examples/write_audio.py
   + https://github.com/Uberi/speech_recognition/blob/master/examples
   + https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
+
+## Phoneme Detection
+
+### Research
+
+  + https://documenter.getpostman.com/view/2675436/speechace-api-calls/6tW8nSr
+  + https://www.speechace.com/#api
+  + https://cmusphinx.github.io/wiki/phonemerecognition/
+
+### IBM
+
+  + https://github.com/watson-developer-cloud/python-sdk/blob/master/watson_developer_cloud/text_to_speech_v1.py
+
+### Google
+
+  + https://cloud.google.com/speech-to-text/docs/automatic-punctuation

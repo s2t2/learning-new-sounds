@@ -32,6 +32,9 @@ pip install --upgrade google-cloud-speech # only necessary for running script/re
 pip install python-dotenv
 pip install pyaudio # on Mac OS, first run: `brew install portaudio` (see http://people.csail.mit.edu/hubert/pyaudio/#downloads)
 pip install SpeechRecognition # depends on pyaudio
+
+
+pip install --upgrade watson-developer-cloud
 ```
 
 ## Authorization
