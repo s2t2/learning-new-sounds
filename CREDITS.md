@@ -45,18 +45,15 @@ curl -s -H "Content-Type: application/json" \
 
 ## Phoneme Detection
 
-### Research
-
   + https://documenter.getpostman.com/view/2675436/speechace-api-calls/6tW8nSr
   + https://www.speechace.com/#api
   + https://cmusphinx.github.io/wiki/phonemerecognition/
   + https://github.com/Uberi/speech_recognition/blob/f89256b9413e4aa22dee0e5241bfcb7dcd3a9161/speech_recognition/__init__.py#L750
-
-### IBM
-
   + https://github.com/watson-developer-cloud/python-sdk/blob/master/watson_developer_cloud/text_to_speech_v1.py
-
-### Google
-
-  + https://cloud.google.com/speech-to-text/docs/automatic-punctuation
-  + https://stackoverflow.com/questions/43163886/google-speech-api-python-exception-specify-flac-encoding-to-match-file-header
+  + https://console.bluemix.net/docs/services/speech-to-text/index.html#about
+  + https://github.com/watson-developer-cloud/python-sdk
+  + https://myibm.ibm.com/dashboard/
+  + https://console.bluemix.net/catalog/services/text-to-speech
+  + https://cloud.ibm.com/apidocs/text-to-speech?code=python#authentication
+  + https://github.com/watson-developer-cloud/python-sdk#iam
+  + https://cloud.ibm.com/docs/services/watson/getting-started-iam.html#iam
