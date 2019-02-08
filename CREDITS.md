@@ -59,3 +59,4 @@ curl -s -H "Content-Type: application/json" \
   + https://cloud.ibm.com/docs/services/watson/getting-started-iam.html#iam
   + https://cloud.ibm.com/docs/services/watson/getting-started-iam.html#iamtoken
   + https://cloud.ibm.com/docs/services/watson/apikey-bp.html#api-key-bp
+  + https://github.com/watson-developer-cloud/python-sdk#getting-credentials
