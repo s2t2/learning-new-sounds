@@ -62,9 +62,14 @@ python scripts/recognize_local.py
 AUDIO_FILENAME="microphone-results.flac" python scripts/recognize_local.py
 
 AUDIO_FILENAME="el-ninyo.flac" LANG="es" python scripts/recognize_local.py
+
+AUDIO_FILENAME="arigato.flac" LANG="jp" python scripts/recognize_local.py
+
 ```
 
 ### Language Examples
+
+> For a list of languages, see: http://www.lingoes.net/en/translator/langcode.htm
 
 ```sh
 python scripts/langs.py
