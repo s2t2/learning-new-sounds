@@ -3,6 +3,8 @@ import json
 import os
 from watson_developer_cloud import TextToSpeechV1, WatsonApiException
 
+breakpoint()
+
 load_dotenv()
 
 API_KEY = os.environ.get("SPEECH_TO_TEXT_APIKEY", "OOPS")
@@ -17,17 +19,20 @@ LANG = "en-US" # Allowable values: [de-DE, en-US, en-GB, es-ES, es-LA, es-US, fr
 
 try:
     voice_model_response = client.create_voice_model(
-        "My Custom Model",
-        LANG,
-        "to get a valid 'customization_id' value..."
+        name="My Custom Model",
+        base_model_name="My Base Model Name",
+        language=LANG,
+        description="to get a valid 'customization_id' value..."
     ).get_result()
+
+    #> https://github.com/watson-developer-cloud/python-sdk/issues/639
+    #> https://stackoverflow.com/questions/54599355/ibm-phoneme-detection-in-python
+
     breakpoint()
-    #> Error: Required parameter 'base_model_name' is missing, Code: 400 , Information: {'warnings': ['Unexpected input parameter(s) [language] detected in the passed JSON'], 'code_description': 'Bad Request'} ...
-    print(json.dumps(voice_model_response, indent=2))
+
     customization_id = voice_model_response["customization_id"]
 
-
-    response = client.get_word(customization_id=customization_id, word="HELLO WORLD") #>
+    response = client.get_word(customization_id=customization_id, word="HELLO WORLD")
     print("RESPONSE")
     print(type(response))
 except WatsonApiException as ex:
