@@ -65,6 +65,7 @@ curl -s -H "Content-Type: application/json" \
   + https://cloud.ibm.com/docs/services/watson/apikey-bp.html#api-key-bp
   + https://github.com/watson-developer-cloud/python-sdk#getting-credentials
   + https://github.com/watson-developer-cloud/python-sdk/blob/b23ab79a6bf3bdc8e3fb66267eee2b2d2f8b5e66/watson_developer_cloud/speech_to_text_v1.py#L368-L371
+  + https://cloud.ibm.com/apidocs/text-to-speech?code=python#create-a-custom-model
 
 Need to create a new resource using the "speech-to-text" service.
 
