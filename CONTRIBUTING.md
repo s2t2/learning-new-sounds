@@ -44,11 +44,15 @@ Create a new `.env` file in the root directory of this repository, as a copy of 
 
 ## Usage
 
+### Audio Recording
+
 Record audio and save to file "sounds/microphone-results.flac":
 
 ```sh
 python scripts/record.py
 ```
+
+### Speech Recognition
 
 Recognize speech (reads from "sounds/brooklyn.flac" by default, but possible to customize via `AUDIO_FILENAME` environment variable referencing the name of a file in the "sounds" directory):
 
@@ -58,4 +62,43 @@ python scripts/recognize_local.py
 AUDIO_FILENAME="microphone-results.flac" python scripts/recognize_local.py
 
 AUDIO_FILENAME="el-ninyo.flac" LANG="es" python scripts/recognize_local.py
+
+AUDIO_FILENAME="arigato.flac" LANG="jp" python scripts/recognize_local.py
+
+AUDIO_FILENAME="chinese.flac" LANG="zh" python scripts/recognize_local.py
+
+AUDIO_FILENAME="bulgarian.flac" LANG="bg-BG" python scripts/recognize_local.py
+
+```
+
+### Language Examples
+
+> For a list of languages, see: http://www.lingoes.net/en/translator/langcode.htm
+
+```sh
+python scripts/langs.py
+#> -------------------
+#> LANG: en-US
+#> TRANSCRIPT: how old is the Brooklyn Bridge
+#> CONFIDENCE: 0.987629
+#> -------------------
+#> LANG: es
+#> TRANSCRIPT: a un niño
+#> CONFIDENCE: 0.76107144
+#> -------------------
+#> LANG: jp
+#> TRANSCRIPT: arigato
+#> CONFIDENCE: 0.98762906
+#> -------------------
+#> LANG: fr
+#> TRANSCRIPT: et c'est la dictée numéro 1
+#> CONFIDENCE: 0.96079487
+#> -------------------
+#> LANG: bg-BG
+#> TRANSCRIPT: Да станах днеска в 9 часа
+#> CONFIDENCE: 0.7405557
+#> -------------------
+#> LANG: zh
+#> TRANSCRIPT: 砸自己的脚
+#> CONFIDENCE: 0.95644838
 ```
