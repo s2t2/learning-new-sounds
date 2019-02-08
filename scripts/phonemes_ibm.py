@@ -16,7 +16,11 @@ print("CLIENT:", type(client))
 #print(json.dumps(voices, indent=2))
 
 try:
-    response = client.get_word(customization_id="1", word="HELLO WORLD")
+    #response = client.get_word(customization_id="1", word="HELLO WORLD") #> Malformed GUID: '1'
+    #response = client.get_word(word="HELLO WORLD") #> get_word() missing 1 required positional argument: 'customization_id'
+    #response = client.get_word(customization_id=None, word="HELLO WORLD") #> ValueError: customization_id must be provided
+    #response = client.get_word(customization_id="GA", word="HELLO WORLD") #> ERROR 400: Malformed GUID: 'GA'
+    response = client.get_word(customization_id="_______", word="HELLO WORLD") #> ERROR 400: Malformed GUID: 'GA'
     print("RESPONSE")
     print(type(response))
 except WatsonApiException as ex:

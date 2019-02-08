@@ -49,6 +49,10 @@ curl -s -H "Content-Type: application/json" \
   + https://www.speechace.com/#api
   + https://cmusphinx.github.io/wiki/phonemerecognition/
   + https://github.com/Uberi/speech_recognition/blob/f89256b9413e4aa22dee0e5241bfcb7dcd3a9161/speech_recognition/__init__.py#L750
+
+
+### IBM
+
   + https://github.com/watson-developer-cloud/python-sdk/blob/master/watson_developer_cloud/text_to_speech_v1.py
   + https://console.bluemix.net/docs/services/speech-to-text/index.html#about
   + https://github.com/watson-developer-cloud/python-sdk
@@ -60,3 +64,8 @@ curl -s -H "Content-Type: application/json" \
   + https://cloud.ibm.com/docs/services/watson/getting-started-iam.html#iamtoken
   + https://cloud.ibm.com/docs/services/watson/apikey-bp.html#api-key-bp
   + https://github.com/watson-developer-cloud/python-sdk#getting-credentials
+  + https://github.com/watson-developer-cloud/python-sdk/blob/b23ab79a6bf3bdc8e3fb66267eee2b2d2f8b5e66/watson_developer_cloud/speech_to_text_v1.py#L368-L371
+
+Need to create a new resource using the "speech-to-text" service.
+
+Need to upgrade both your account and the service from a "lite" account to a "standard" account.
