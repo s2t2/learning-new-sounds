@@ -65,6 +65,10 @@ AUDIO_FILENAME="el-ninyo.flac" LANG="es" python scripts/recognize_local.py
 
 AUDIO_FILENAME="arigato.flac" LANG="jp" python scripts/recognize_local.py
 
+AUDIO_FILENAME="chinese.flac" LANG="zh" python scripts/recognize_local.py
+
+AUDIO_FILENAME="bulgarian.flac" LANG="bg-BG" python scripts/recognize_local.py
+
 ```
 
 ### Language Examples
@@ -81,6 +85,10 @@ python scripts/langs.py
 #> LANG: es
 #> TRANSCRIPT: a un niño
 #> CONFIDENCE: 0.76107144
+#> -------------------
+#> LANG: jp
+#> TRANSCRIPT: arigato
+#> CONFIDENCE: 0.98762906
 #> -------------------
 #> LANG: fr
 #> TRANSCRIPT: et c'est la dictée numéro 1

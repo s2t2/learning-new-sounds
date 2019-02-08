@@ -6,7 +6,7 @@ import speech_recognition as sr
 recordings = [
     {"lang": "en-US", "filename": "brooklyn.flac"},
     {"lang": "es", "filename": "el-ninyo.flac"},
-    #{"lang": "jp", "filename": "arigato.flac"},
+    {"lang": "jp", "filename": "arigato.flac"},
     {"lang": "fr", "filename": "french.aiff"},
     {"lang": "bg-BG", "filename": "bulgarian.flac"},
     {"lang": "zh", "filename": "chinese.flac"},
