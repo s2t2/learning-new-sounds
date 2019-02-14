@@ -73,6 +73,8 @@ curl -s -H "Content-Type: application/json" \
   + https://console.bluemix.net/catalog/services/speech-to-text
   + https://cloud.ibm.com/apidocs/speech-to-text
   + https://github.com/watson-developer-cloud/python-sdk/issues/639#issuecomment-463308742
+  + https://cloud.ibm.com/apidocs/speech-to-text?code=python#create-a-custom-language-model
+  + https://console.bluemix.net/services/text-to-speech/
 
 Need to create a new resource using the "speech-to-text" service.
 

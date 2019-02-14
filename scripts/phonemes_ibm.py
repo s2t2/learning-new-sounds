@@ -15,7 +15,7 @@ print("CUSTOMIZATION_ID:", CUSTOMIZATION_ID)
 print("LANG:", LANG)
 
 client = TextToSpeechV1(iam_apikey=API_KEY, url=URL)
-print("CLIENT:", type(client))
+print("CLIENT:", type(client)) #> <class 'watson_developer_cloud.text_to_speech_adapter_v1.TextToSpeechV1Adapter'>
 
 def get_customization_id():
     if CUSTOMIZATION_ID:
@@ -35,6 +35,7 @@ def get_customization_id():
 try:
     customization_id = get_customization_id()
     response = client.get_word(customization_id=customization_id, word="HELLO WORLD")
+    #> ERROR 400: Word 'HELLO WORLD' not found in custom model 'abc-123'
     print("RESPONSE")
     print(type(response))
 except WatsonApiException as ex:
