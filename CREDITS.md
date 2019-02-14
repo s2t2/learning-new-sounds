@@ -70,6 +70,9 @@ curl -s -H "Content-Type: application/json" \
   + https://github.com/watson-developer-cloud/python-sdk/blob/b23ab79a6bf3bdc8e3fb66267eee2b2d2f8b5e66/watson_developer_cloud/text_to_speech_v1.py#L362-L386
   + https://github.com/watson-developer-cloud/python-sdk/issues/639
   + https://stackoverflow.com/questions/54599355/ibm-phoneme-detection-in-python
+  + https://console.bluemix.net/catalog/services/speech-to-text
+  + https://cloud.ibm.com/apidocs/speech-to-text
+  + https://github.com/watson-developer-cloud/python-sdk/issues/639#issuecomment-463308742
 
 Need to create a new resource using the "speech-to-text" service.
 
