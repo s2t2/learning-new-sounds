@@ -21,8 +21,13 @@ with sr.AudioFile(AUDIO_FILEPATH) as source:
 print("-----------------------")
 print("AUDIO:", type(audio))
 
-response = client.recognize_sphinx(audio) #> 'how old is the Brooklyn Bridge'
+try:
+    response = client.recognize_sphinx(
+    audio, keyword_entries=[("brook", 1.0)]
+    ) #> 'how old is the Brooklyn Bridge'
 
-print("-----------------------")
-print("RESPONSE:", type(response))
-print("TRANSCRIPT:", response)
+    print("-----------------------")
+    print("RESPONSE:", type(response))
+    print("TRANSCRIPT:", response)
+except sr.UnknownValueError as err:
+    print("KEYWORD NOT FOUND")
