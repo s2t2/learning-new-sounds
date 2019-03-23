@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for English counting example
+ * see: https://github.com/Uberi/speech_recognition/blob/master/examples/counting.gram
+ */
+
+grammar counting;
+
+public <counting> = ( <digit> ) +;
+
+<digit> = one | two | three | four | five | six | seven ;
