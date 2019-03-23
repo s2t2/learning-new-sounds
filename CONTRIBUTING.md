@@ -117,4 +117,5 @@ python scripts/langs.py
 
 ```sh
 python scripts/phonemes.py
+AUDIO="microphone-results.flac" python scripts/phonemes.py
 ```
