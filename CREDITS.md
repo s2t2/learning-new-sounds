@@ -76,6 +76,7 @@ curl -s -H "Content-Type: application/json" \
 
   + https://pypi.org/project/pocketsphinx/
   + https://github.com/bambocher/pocketsphinx-python
+  + https://github.com/bambocher/pocketsphinx-python#audiofile
 
 ### Speech Recognition in Python
 
