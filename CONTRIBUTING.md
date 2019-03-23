@@ -6,17 +6,24 @@
   + Python 3.7
   + Pip
 
+Also install the [`portaudio`](http://people.csail.mit.edu/hubert/pyaudio/#downloads) utility (which the `pyaudio` Python package needs):
+
+```sh
+# Mac Terminal:
+brew install portaudio
+```
+
 ## Installation
 
-Download or clone from [GitHub source](https://github.com/s2t2/learning-new-sounds).
-
-## Setup
+Download or clone this repo from [GitHub source](https://github.com/s2t2/learning-new-sounds).
 
 Navigate into this repository:
 
 ```sh
 cd learning-new-sounds
 ```
+
+## Setup
 
 Create and activate a new virtual environment:
 
@@ -28,10 +35,13 @@ conda activate sounds-env
 Install package dependencies:
 
 ```sh
-pip install --upgrade google-cloud-speech # only necessary for running script/recognize_remote.py
 pip install python-dotenv
-pip install pyaudio # on Mac OS, first run: `brew install portaudio` (see http://people.csail.mit.edu/hubert/pyaudio/#downloads)
-pip install SpeechRecognition # depends on pyaudio
+pip install pyaudio # the SpeechRecognition package needs this
+pip install --upgrade pocketsphinx # the SpeechRecognition package needs this
+pip install SpeechRecognition
+
+# only necessary for running script/recognize_remote.py ...
+pip install --upgrade google-cloud-speech
 ```
 
 ## Authorization
@@ -101,4 +111,10 @@ python scripts/langs.py
 #> LANG: zh
 #> TRANSCRIPT: 砸自己的脚
 #> CONFIDENCE: 0.95644838
+```
+
+### Recognize Phonemes
+
+```sh
+python scripts/phonemes.py
 ```

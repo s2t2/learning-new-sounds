@@ -42,3 +42,47 @@ curl -s -H "Content-Type: application/json" \
   + https://github.com/Uberi/speech_recognition/blob/master/examples/write_audio.py
   + https://github.com/Uberi/speech_recognition/blob/master/examples
   + https://github.com/Uberi/speech_recognition/blob/master/speech_recognition/__main__.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+## Phoneme Recognition
+
+### Sphinx
+
+"Recently a support for phoneme recognition has been added to pocketsphinx decoder."
+
+
+  + https://cmusphinx.github.io/wiki/phonemerecognition/
+  + https://cmusphinx.github.io/wiki/pocketsphinx_pronunciation_evaluation/
+  + https://cmusphinx.github.io/wiki/
+  + https://cmusphinx.github.io/wiki/tutorial/
+  + https://github.com/cmusphinx/pocketsphinx
+
+### Sphinx in Python
+
+  + https://pypi.org/project/pocketsphinx/
+  + https://github.com/bambocher/pocketsphinx-python
+
+### Speech Recognition in Python
+
+  + https://github.com/Uberi/speech_recognition
+  + https://github.com/Uberi/speech_recognition#pocketsphinx-python-for-sphinx-users
+  + https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst
+
+"PocketSphinx-Python is required if and only if you want to use the Sphinx recognizer (recognizer_instance.recognize_sphinx)."
+
+"By default, SpeechRecognition's Sphinx functionality supports only US English. Additional language packs are also available [in ...] International French, Mandarin Chinese, [and] Italian."
