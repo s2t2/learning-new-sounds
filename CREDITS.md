@@ -82,6 +82,7 @@ curl -s -H "Content-Type: application/json" \
   + https://github.com/Uberi/speech_recognition
   + https://github.com/Uberi/speech_recognition#pocketsphinx-python-for-sphinx-users
   + https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst
+  + https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst#recognizer_instancerecognize_sphinxaudio_data-audiodata-language-str--en-us-keyword_entries-unioniterabletuplestr-float-none--none-grammar-unionstr-none--none-show_all-bool--false---unionstr-pocketsphinxpocketsphinxdecoder
 
 "PocketSphinx-Python is required if and only if you want to use the Sphinx recognizer (recognizer_instance.recognize_sphinx)."
 
