@@ -38,12 +38,14 @@ while True:
         break
 decoder.end_utt()
 stream.close()
+
+print("WORDS:")
+
+for seg in decoder.seg():
+    print(type(seg))
+    print(seg.word)
+
 #> INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
 #> ERROR: "ngram_search.c", line 1139: Couldn't find <s> in first frame
 
-
-print("WORDS:", [seg.word for seg in decoder.seg()])
-
 #print ("PHONEMES:" , [(seg.word, decoder.lookup_word(seg.word)) for seg in decoder.seg()])
-
-breakpoint()
