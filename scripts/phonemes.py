@@ -7,9 +7,9 @@ import pocketsphinx as ps
 
 load_dotenv()
 
-# AUDIO_FILENAME = os.environ.get("AUDIO", "brooklyn.flac")
-# AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sounds", AUDIO_FILENAME)
-# print("AUDIO FILE:", AUDIO_FILEPATH.replace("scripts/../",""))
+AUDIO_FILENAME = os.environ.get("AUDIO", "brooklyn.flac")
+AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sounds", AUDIO_FILENAME)
+print("AUDIO FILE:", AUDIO_FILEPATH.replace("scripts/../",""))
 
 PS_DIR = os.environ.get("PS_DIR", "/usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx")
 MODEL_DIR = os.path.join(PS_DIR, "model") #> "deps/pocketsphinx/model"
@@ -29,7 +29,7 @@ print("DECODER:", type(decoder))
 print("READING AUDIO FILE...")
 # can replace this with higher-level speech_recognition package capabilities?
 decoder.start_utt()
-stream = open(os.path.join(DATA_DIR, "hello_world.wav"), "rb") #> FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx/test/data/hello_world.wav'
+stream = open(AUDIO_FILEPATH, "rb")
 while True:
     buf = stream.read(1024)
     if buf:
@@ -38,6 +38,9 @@ while True:
         break
 decoder.end_utt()
 stream.close()
+#> INFO: ngram_search_fwdflat.c(302): Utterance vocabulary contains 0 words
+#> ERROR: "ngram_search.c", line 1139: Couldn't find <s> in first frame
+
 
 print("WORDS:", [seg.word for seg in decoder.seg()])
 
