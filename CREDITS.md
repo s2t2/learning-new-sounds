@@ -96,11 +96,13 @@ brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
 ```sh
 pkg-config --variable=modeldir pocketsphinx
 #> /usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx/model
-
-pkg-config --variable=datadir pocketsphinx
-#> /usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx
 ```
 
+```sh
+cd deps/
+git clone git@github.com:cmusphinx/sphinxbase.git
+git clone git@github.com:cmusphinx/pocketsphinx.git
+```
 ### Sphinx in Python
 
   + https://pypi.org/project/pocketsphinx/

@@ -7,15 +7,16 @@ import pocketsphinx as ps
 
 load_dotenv()
 
-AUDIO_FILENAME = os.environ.get("AUDIO", "brooklyn.flac")
-AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sounds", AUDIO_FILENAME)
-print("AUDIO FILE:", AUDIO_FILEPATH.replace("scripts/../",""))
+#AUDIO_FILENAME = os.environ.get("AUDIO", "brooklyn.flac")
+#AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "sounds", AUDIO_FILENAME)
+#print("AUDIO FILE:", AUDIO_FILEPATH.replace("scripts/../",""))
+
+AUDIO_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "deps", "pocketsphinx", "test", "data", "goforward.raw")
 
 PS_DIR = os.environ.get("PS_DIR", "/usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx")
 MODEL_DIR = os.path.join(PS_DIR, "model") #> "deps/pocketsphinx/model"
-DATA_DIR = os.path.join(PS_DIR, "test", "data") #> "deps/pocketsphinx/test/data"
+#DATA_DIR = os.path.join(PS_DIR, "test", "data") #> "deps/pocketsphinx/test/data"
 print(MODEL_DIR)
-print(DATA_DIR)
 
 config = ps.Decoder.default_config()
 config.set_string('-hmm', os.path.join(MODEL_DIR, "en-us/en-us"))
