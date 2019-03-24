@@ -61,6 +61,15 @@ curl -s -H "Content-Type: application/json" \
 
 ## Phoneme Recognition
 
+  + https://cmusphinx.github.io/wiki/cmubet/
+  + http://www.speech.cs.cmu.edu/cgi-bin/cmudict
+  + https://en.wikipedia.org/wiki/ARPABET
+
+```py
+"hello" #> HH AH L OW
+"world" #> W ER L D
+```
+
 ### Sphinx
 
 "Recently a support for phoneme recognition has been added to pocketsphinx decoder."
@@ -70,13 +79,35 @@ curl -s -H "Content-Type: application/json" \
   + https://cmusphinx.github.io/wiki/pocketsphinx_pronunciation_evaluation/
   + https://cmusphinx.github.io/wiki/
   + https://cmusphinx.github.io/wiki/tutorial/
+  + https://cmusphinx.github.io/wiki/download/
   + https://github.com/cmusphinx/pocketsphinx
+  + https://stackoverflow.com/questions/35174935/pocketsphinx-install-does-not-contain-acoustic-model-definition-mdef
+  + https://github.com/watsonbox/homebrew-cmu-sphinx (2015 old?)
+  + https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/
+  + https://cmusphinx.github.io/wiki/tutorialpocketsphinx/
+
+```sh
+brew tap watsonbox/cmu-sphinx
+
+brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
+brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
+```
+
+```sh
+pkg-config --variable=modeldir pocketsphinx
+#> /usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx/model
+
+pkg-config --variable=datadir pocketsphinx
+#> /usr/local/Cellar/cmu-pocketsphinx/HEAD-3bf4fe6/share/pocketsphinx
+```
 
 ### Sphinx in Python
 
   + https://pypi.org/project/pocketsphinx/
   + https://github.com/bambocher/pocketsphinx-python
   + https://github.com/bambocher/pocketsphinx-python#audiofile
+  + https://stackoverflow.com/questions/42500907/is-there-a-way-to-return-entire-dictionary-entry-word-phoneme-in-pocketsphin
+
 
 ### Speech Recognition in Python
 

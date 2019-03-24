@@ -2,6 +2,7 @@
 
 ## Prerequisites
 
+  + Homebrew (Mac OS)
   + Anaconda 3.7
   + Python 3.7
   + Pip
@@ -11,6 +12,15 @@ Also install the [`portaudio`](http://people.csail.mit.edu/hubert/pyaudio/#downl
 ```sh
 # Mac Terminal:
 brew install portaudio
+```
+
+Also install the `pocketsphinx` utilities:
+
+```sh
+# Mac Terminal:
+brew tap watsonbox/cmu-sphinx
+brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
+brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
 ```
 
 ## Installation
