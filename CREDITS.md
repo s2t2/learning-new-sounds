@@ -103,6 +103,23 @@ cd deps/
 git clone git@github.com:cmusphinx/sphinxbase.git
 git clone git@github.com:cmusphinx/pocketsphinx.git
 ```
+
+  + https://bangladroid.wordpress.com/2017/02/16/installing-cmu-sphinx-on-ubuntu/
+
+"Now we need to run the autogen.sh shell script you can see in the sphinxbase directory. This will generate our Makefiles and other important scripts for compiling and installing. We’re going to get a long output here, so I only show some of it here:"
+
+```sh
+deps/sphinxbase/autogen.sh
+make
+
+# not sure how installed, but the objective is to run something like...
+# sphinx_lm_eval (to test sphinxbase installation)
+# pocketsphinx_continuous (to test pocketsphinx installation)
+```
+
+
+
+
 ### Sphinx in Python
 
   + https://pypi.org/project/pocketsphinx/

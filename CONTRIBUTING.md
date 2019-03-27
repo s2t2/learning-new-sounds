@@ -23,6 +23,35 @@ brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
 brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
 ```
 
+JK...
+
+Clone them from GitHub source into the "deps" directory, then run some setup commands:
+
+```sh
+cd deps/
+git clone git@github.com:cmusphinx/sphinxbase.git
+git clone git@github.com:cmusphinx/pocketsphinx.git
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Installation
 
 Download or clone this repo from [GitHub source](https://github.com/s2t2/learning-new-sounds).
