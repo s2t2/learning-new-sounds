@@ -110,15 +110,81 @@ git clone git@github.com:cmusphinx/pocketsphinx.git
 
 ```sh
 deps/sphinxbase/autogen.sh
-make
-
-# not sure how installed, but the objective is to run something like...
-# sphinx_lm_eval (to test sphinxbase installation)
-# pocketsphinx_continuous (to test pocketsphinx installation)
+make # oops i ran this from the root directory of this repository. it generated a bunch of files in this repo, which i subsequently deleted
 ```
 
+not sure how installed, but it is, and the objective is to run something like...
 
+```sh
+# sphinx_lm_eval (to test sphinxbase installation)
+# pocketsphinx_continuous (to test pocketsphinx installation)
 
+pocketsphinx_continuous -infile deps/pocketsphinx/test/data/goforward.raw
+#> go forward ten meters
+```
+
+Yeah but how about phoneme recognition?
+
+```sh
+pocketsphinx_continuous -infile deps/pocketsphinx/test/data/goforward.raw \
+                        -hmm  deps/pocketsphinx/model/en-us/en-us \
+                        -allphone deps/pocketsphinx/model/en-us/en-us-phone.lm.bin \
+                        -backtrace yes \
+                        -beam 1e-20 -pbeam 1e-20 -lw 2.0
+#> SIL G OW F AO R D T AE N NG IY ZH ER S SIL
+```
+
+Haha ok. what?
+
+``` sh
+# http://www.speech.cs.cmu.edu/cgi-bin/cmudict
+AA	odd     AA D
+AE	at	AE T
+AH	hut	HH AH T
+AO	ought	AO T
+AW	cow	K AW
+AY	hide	HH AY D
+B 	be	B IY
+CH	cheese	CH IY Z
+D 	dee	D IY
+DH	thee	DH IY
+EH	Ed	EH D
+ER	hurt	HH ER T
+EY	ate	EY T
+F 	fee	F IY
+G 	green	G R IY N
+HH	he	HH IY
+IH	it	IH T
+IY	eat	IY T
+JH	gee	JH IY
+K 	key	K IY
+L 	lee	L IY
+M 	me	M IY
+N 	knee	N IY
+NG	ping	P IH NG
+OW	oat	OW T
+OY	toy	T OY
+P 	pee	P IY
+R 	read	R IY D
+S 	sea	S IY
+SH	she	SH IY
+T 	tea	T IY
+TH	theta	TH EY T AH
+UH	hood	HH UH D
+UW	two	T UW
+V 	vee	V IY
+W 	we	W IY
+Y 	yield	Y IY L D
+Z 	zee	Z IY
+ZH	seizure	S IY ZH ER
+```
+
+```sh
+#> G OW
+#> F AO R D
+#> T AE N
+#> NG IY ZH ER S
+```
 
 ### Sphinx in Python
 
