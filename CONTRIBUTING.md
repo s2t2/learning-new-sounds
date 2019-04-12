@@ -2,21 +2,67 @@
 
 ## Prerequisites
 
+  + Homebrew (Mac OS)
   + Anaconda 3.7
   + Python 3.7
   + Pip
 
+Also install the [`portaudio`](http://people.csail.mit.edu/hubert/pyaudio/#downloads) utility (which the `pyaudio` Python package needs):
+
+```sh
+# Mac Terminal:
+brew install portaudio
+```
+
+Also install the `pocketsphinx` utilities:
+
+```sh
+# Mac Terminal:
+brew tap watsonbox/cmu-sphinx
+brew install --HEAD watsonbox/cmu-sphinx/cmu-sphinxbase
+brew install --HEAD watsonbox/cmu-sphinx/cmu-pocketsphinx
+```
+
+JK...
+
+Clone them from GitHub source into the "deps" directory, then run some setup commands:
+
+```sh
+cd deps/
+git clone git@github.com:cmusphinx/sphinxbase.git
+git clone git@github.com:cmusphinx/pocketsphinx.git
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Installation
 
-Download or clone from [GitHub source](https://github.com/s2t2/learning-new-sounds).
-
-## Setup
+Download or clone this repo from [GitHub source](https://github.com/s2t2/learning-new-sounds).
 
 Navigate into this repository:
 
 ```sh
 cd learning-new-sounds
 ```
+
+## Setup
 
 Create and activate a new virtual environment:
 
@@ -28,10 +74,13 @@ conda activate sounds-env
 Install package dependencies:
 
 ```sh
-pip install --upgrade google-cloud-speech # only necessary for running script/recognize_remote.py
 pip install python-dotenv
-pip install pyaudio # on Mac OS, first run: `brew install portaudio` (see http://people.csail.mit.edu/hubert/pyaudio/#downloads)
-pip install SpeechRecognition # depends on pyaudio
+pip install pyaudio # the SpeechRecognition package needs this
+pip install --upgrade pocketsphinx # the SpeechRecognition package needs this
+pip install SpeechRecognition
+
+# only necessary for running script/recognize_remote.py ...
+pip install --upgrade google-cloud-speech
 ```
 
 ## Authorization
@@ -101,4 +150,29 @@ python scripts/langs.py
 #> LANG: zh
 #> TRANSCRIPT: 砸自己的脚
 #> CONFIDENCE: 0.95644838
+```
+
+### Recognize Phonemes
+
+
+
+
+
+```sh
+python scripts/phonemes.py
+AUDIO="microphone-results.flac" python scripts/phonemes.py
+```
+
+
+JK...
+
+
+```sh
+pocketsphinx_continuous -infile deps/pocketsphinx/test/data/goforward.raw \
+                        -hmm  deps/pocketsphinx/model/en-us/en-us \
+                        -allphone deps/pocketsphinx/model/en-us/en-us-phone.lm.bin \
+                        -backtrace yes \
+                        -beam 1e-20 \
+                        -pbeam 1e-20 \
+                        -lw 2.0
 ```
