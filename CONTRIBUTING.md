@@ -172,5 +172,7 @@ pocketsphinx_continuous -infile deps/pocketsphinx/test/data/goforward.raw \
                         -hmm  deps/pocketsphinx/model/en-us/en-us \
                         -allphone deps/pocketsphinx/model/en-us/en-us-phone.lm.bin \
                         -backtrace yes \
-                        -beam 1e-20 -pbeam 1e-20 -lw 2.0
+                        -beam 1e-20 \
+                        -pbeam 1e-20 \
+                        -lw 2.0
 ```
